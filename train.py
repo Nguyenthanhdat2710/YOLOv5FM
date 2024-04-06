@@ -440,11 +440,10 @@ def train(hyp, opt, device, callbacks):  # hyp is path/to/hyp.yaml or hyp dictio
     torch.cuda.empty_cache()
     return results
 
-
 def parse_opt(known=False):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', type=str, default=ROOT / 'D:/yolo/yoloxxx/yolov5/models/weight/yolov5n.pt', help='initial weights path')
-    parser.add_argument('--cfg', type=str, default=ROOT / 'D:/yolo/yoloxxx/yolov5/models/demo-yaml/YOLOv5-EffQAFPN-FocalNext-NADHDetect11.yaml', help='model.yaml path')
+    parser.add_argument("--weights", type=str, default=ROOT / "yolov5s.pt", help="initial weights path")
+    parser.add_argument("--cfg", type=str, default="", help="model.yaml path")
     parser.add_argument('--data', type=str, default=ROOT / 'data/coco128-fire.yaml', help='dataset.yaml path')
     parser.add_argument('--hyp', type=str, default=ROOT / 'data/hyps/hyp.scratch-low.yaml', help='hyperparameters path')
     parser.add_argument('--epochs', type=int, default=200, help='total training epochs')
